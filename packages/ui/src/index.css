@@ -1,3 +1,78 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* text */
+    /* For rgb(r g b / <alpha-value>) */
+    /* white */
+    --ui-color-text-on-color: 255 255 255;
+    /* gray-900 */
+    --ui-color-text: 17 24 39;
+    /* gray-500 */
+    --ui-color-text-subdued: 107 114 128;
+    /* /text */
+
+    /* status */
+    /* sky-500 */
+    --ui-color-info: 14 165 233;
+    /* sky-50 */
+    --ui-color-info-subdued: 240 249 255;
+
+    /* green-500 */
+    --ui-color-success: 34 197 94;
+    /* green-50 */
+    --ui-color-success-subdued: 240 253 244;
+
+    /* amber-500 */
+    --ui-color-warning: 245 158 11;
+    /* amber-50 */
+    --ui-color-warning-subdued: 255 251 235;
+
+    /* red-500 */
+    --ui-color-critical: 239 68 68;
+    /* red-50 */
+    --ui-color-critical-subdued: 254 242 242;
+    /* /status */
+
+    /* border */
+    /* gray-200 */
+    --ui-color-border: 229 231 235;
+    /* /border */
+
+    /* background */
+    /* white */
+    --ui-color-bg-default: 255 255 255;
+    /* gray-50 */
+    --ui-color-bg-default-hover: 249 250 251;
+    
+    /* gray-50 */
+    --ui-color-bg-surface: 249 250 251;
+    /* gray-100 */
+    --ui-color-bg-surface-hover: 243 244 246;
+    /* /background */
+  }
+  .dark {
+    /* gray-50 */
+    --ui-color-text: 249 250 251;
+    /* gray-400 */
+    --ui-color-text-subdued: 156 163 175;
+
+    /* gray-800 */
+    --ui-color-bg-surface: 31 41 55;
+    /* gray-700 */
+    --ui-color-bg-surface-hover: 55 65 81;
+    /* gray-600 */
+    --ui-color-border: 75 85 99;
+
+    --ui-color-bg-default: 17 24 39;
+
+    --ui-color-bg-default-hover: 31 41 55;
+  }
+}
+
+body {
+  @apply text-default;
+  @apply bg-default;
+}

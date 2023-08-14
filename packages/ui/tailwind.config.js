@@ -41,7 +41,7 @@ export default {
       },
 
       colors: ({ colors }) => ({
-        primary: colors.blue[500],
+        primary: "rgb(var(--ui-color-primary) / <alpha-value>)",
 
         info: "rgb(var(--ui-color-info) / <alpha-value>)",
         "info-subdued": "rgb(var(--ui-color-info-subdued) / <alpha-value>)",

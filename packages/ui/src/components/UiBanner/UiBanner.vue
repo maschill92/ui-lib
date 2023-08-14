@@ -1,12 +1,17 @@
 <template>
   <div
-    class="flex rounded border bg-surface p-6"
     :class="{
+      'bg-surface': isDefault,
       'border-info': isInfo,
+      'bg-info-subdued': isInfo,
       'border-success': isSuccess,
+      'bg-success-subdued': isSuccess,
       'border-warning': isWarning,
+      'bg-warning-subdued': isWarning,
       'border-critical': isCritical,
+      'bg-critical-subdued': isCritical,
     }"
+    class="flex rounded border p-6 dark:bg-surface"
     role="alert"
   >
     <div class="mr-5">
@@ -19,7 +24,16 @@
   </div>
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+type BannerType = (typeof BannerTypes)[number];
+export const BannerTypes = [
+  "default",
+  "info",
+  "success",
+  "warning",
+  "critical",
+] as const;
+</script>
 
 <script setup lang="ts">
 import { computed, type Component } from "vue";
@@ -28,14 +42,13 @@ import AlertRhombusOutline from "@/components/icons/AlertRhombusOutline";
 import CheckCircleOutline from "@/components/icons/CheckCircleOutline";
 import InformationOutlineIcon from "@/components/icons/InformationOutlineIcon";
 
-type Type = "default" | "info" | "success" | "warning" | "critical";
 
-const props = withDefaults(defineProps<{ title: string; type?: Type }>(), {
+const props = withDefaults(defineProps<{ title: string; type?: BannerType }>(), {
   type: "default",
 });
 
 const bannerIcon = computed(() => {
-  const iconRecord: Record<Type, { is: Component; class: string }> = {
+  const iconRecord: Record<BannerType, { is: Component; class: string }> = {
     default: { is: InformationOutlineIcon, class: "text-default" },
     info: { is: InformationOutlineIcon, class: "text-info" },
     success: { is: CheckCircleOutline, class: "text-success" },
@@ -46,6 +59,7 @@ const bannerIcon = computed(() => {
   return iconRecord[props.type];
 });
 
+const isDefault = computed(() => props.type === "default");
 const isInfo = computed(() => props.type === "info");
 const isSuccess = computed(() => props.type === "success");
 const isWarning = computed(() => props.type === "warning");

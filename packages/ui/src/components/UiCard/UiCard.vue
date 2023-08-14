@@ -21,5 +21,5 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{ title?: string, subtitle?: string; }>();
+defineProps<{ title?: string, subtitle?: string; }>();
 </script>

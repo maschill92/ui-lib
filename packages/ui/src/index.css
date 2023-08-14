@@ -5,7 +5,6 @@
 @layer base {
   :root {
     /* text */
-    /* For rgb(r g b / <alpha-value>) */
     /* white */
     --ui-color-text-on-color: 255 255 255;
     /* gray-900 */
@@ -13,6 +12,10 @@
     /* gray-500 */
     --ui-color-text-subdued: 107 114 128;
     /* /text */
+
+    /* branding */
+    --ui-color-primary: 36 107 246;
+    /* /branding */
 
     /* status */
     /* sky-500 */
@@ -46,7 +49,7 @@
     --ui-color-bg-default: 255 255 255;
     /* gray-50 */
     --ui-color-bg-default-hover: 249 250 251;
-    
+
     /* gray-50 */
     --ui-color-bg-surface: 249 250 251;
     /* gray-100 */

@@ -1,27 +1,19 @@
 <template>
   <div
+    class="flex rounded border bg-surface p-6"
     :class="{
       'border-info': isInfo,
-      // 'bg-info-subdued': isInfo,
-
       'border-success': isSuccess,
-      // 'bg-success-subdued': isSuccess,
-
       'border-warning': isWarning,
-      // 'bg-warning-subdued': isWarning,
-
       'border-critical': isCritical,
-      // 'bg-critical-subdued': isCritical,
     }"
-    class="flex p-4 rounded-lg border bg-surface"
     role="alert"
   >
     <div class="mr-5">
       <component :is="bannerIcon.is" :class="bannerIcon.class" />
     </div>
-    <span class="sr-only">Info</span>
     <div class="grow">
-      <h2 class="font-medium leading-none mb-1">{{ title }}</h2>
+      <div class="mb-1 font-medium leading-none">{{ title }}</div>
       <slot />
     </div>
   </div>

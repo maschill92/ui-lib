@@ -15,9 +15,21 @@
           <UiTab>Trending</UiTab>
         </UiTabList>
         <UiTabPanels>
-          <UiTabPanel><UiCard title="Recent Content">Additional stuff here!</UiCard></UiTabPanel>
-          <UiTabPanel><UiCard title="Popular Content">Additional stuff here!</UiCard></UiTabPanel>
-          <UiTabPanel><UiCard title="Trending Content">Additional stuff here!</UiCard></UiTabPanel>
+          <UiTabPanel
+            ><UiCard title="Recent Content"
+              >Additional stuff here!</UiCard
+            ></UiTabPanel
+          >
+          <UiTabPanel
+            ><UiCard title="Popular Content"
+              >Additional stuff here!</UiCard
+            ></UiTabPanel
+          >
+          <UiTabPanel
+            ><UiCard title="Trending Content"
+              >Additional stuff here!</UiCard
+            ></UiTabPanel
+          >
         </UiTabPanels>
       </UiTabGroup>
     </div>
@@ -63,18 +75,19 @@
 <script setup lang="ts">
 import { watchEffect } from "vue";
 import { useMediaQuery, useLocalStorage } from "@vueuse/core";
-import UiBanner from "./components/UiBanner.vue";
-import UiList from "./components/UiList.vue";
-import UiCard from "./components/UiCard.vue";
-import UiButton from "./components/UiButton.vue";
 import ThemeLightDark from "./components/icons/ThemeLightDark";
+
+import { UiBanner } from "./components/UiBanner";
+import { UiList } from "./components/UiList";
+import { UiCard } from "./components/UiCard";
+import { UiButton } from "./components/UiButton";
 import {
   UiTabGroup,
   UiTabList,
   UiTab,
   UiTabPanels,
   UiTabPanel,
-} from "./components/tabs";
+} from "./components/UiTab";
 
 const isPreferredDark = useMediaQuery("(prefers-color-scheme: dark)");
 const isDark = useLocalStorage<boolean>("theme", isPreferredDark.value);

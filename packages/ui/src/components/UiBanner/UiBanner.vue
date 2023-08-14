@@ -23,10 +23,10 @@
 
 <script setup lang="ts">
 import { computed, type Component } from "vue";
-import AlertCircleOutline from "./icons/AlertCircleOutline";
-import AlertRhombusOutline from "./icons/AlertRhombusOutline";
-import CheckCircleOutline from "./icons/CheckCircleOutline";
-import InformationOutlineIcon from "./icons/InformationOutlineIcon";
+import AlertCircleOutline from "@/components/icons/AlertCircleOutline";
+import AlertRhombusOutline from "@/components/icons/AlertRhombusOutline";
+import CheckCircleOutline from "@/components/icons/CheckCircleOutline";
+import InformationOutlineIcon from "@/components/icons/InformationOutlineIcon";
 
 type Type = "default" | "info" | "success" | "warning" | "critical";
 
